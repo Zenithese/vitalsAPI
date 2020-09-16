@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  temperature: MyString
+  blood: MyString
+  oximeter_spo2: MyString
+  oximeter_pr: MyString
+
+two:
+  temperature: MyString
+  blood: MyString
+  oximeter_spo2: MyString
+  oximeter_pr: MyString
