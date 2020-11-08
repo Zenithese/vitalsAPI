@@ -2,14 +2,10 @@ class Api::MeasurementsController < ApplicationController
   skip_before_action :verify_authenticity_token
   before_action :set_measurement, only: [:show, :edit, :update, :destroy]
 
-  # GET /measurements
-  # GET /measurements.json
   def index
     @measurements = Measurement.all
   end
 
-  # GET /measurements/1
-  # GET /measurements/1.json
   def show
   end
 
@@ -18,12 +14,9 @@ class Api::MeasurementsController < ApplicationController
     @measurement = Measurement.new
   end
 
-  # GET /measurements/1/edit
   def edit
   end
 
-  # POST /measurements
-  # POST /measurements.json
   def create
     @measurement = Measurement.new(measurement_params)
 
@@ -36,8 +29,6 @@ class Api::MeasurementsController < ApplicationController
     end
   end
 
-  # PATCH/PUT /measurements/1
-  # PATCH/PUT /measurements/1.json
   def update
     respond_to do |format|
       if @measurement.update(measurement_params)
@@ -50,8 +41,6 @@ class Api::MeasurementsController < ApplicationController
     end
   end
 
-  # DELETE /measurements/1
-  # DELETE /measurements/1.json
   def destroy
     @measurement.destroy
     respond_to do |format|
@@ -61,12 +50,10 @@ class Api::MeasurementsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
     def set_measurement
       @measurement = Measurement.find(params[:id])
     end
 
-    # Only allow a list of trusted parameters through.
     def measurement_params
       params.require(:measurement).permit(:temperature, :blood, :oximeter_spo2, :oximeter_pr)
     end
